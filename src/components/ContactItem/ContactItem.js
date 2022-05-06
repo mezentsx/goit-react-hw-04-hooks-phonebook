@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './ContactItem.module.css';
 
-const ContactItem = ({ onDelete, id, name, number }) => {
+export default function ContactItem ({ onDelete, id, name, number }) {
   return (
     <li className={s.item}>
       {name}: {number}
@@ -10,6 +10,4 @@ const ContactItem = ({ onDelete, id, name, number }) => {
       </button>
     </li>
   );
-};
-
-export default ContactItem;
+}

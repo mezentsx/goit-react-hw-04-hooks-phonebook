@@ -2,7 +2,7 @@ import React from 'react';
 import ContactItem from '../ContactItem';
 import s from './ContactList.module.css';
 
-const ContactList = ({ contacts, onDelete }) => {
+export default function ContactList ({ contacts, onDelete }) {
   return (
     <ul className={s.list}>
       {contacts.map(({ id, name, number }) => {
@@ -18,6 +18,4 @@ const ContactList = ({ contacts, onDelete }) => {
       })}
     </ul>
   );
-};
-
-export default ContactList;
+}

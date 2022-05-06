@@ -2,7 +2,7 @@ import React from 'react';
 import { nanoid } from 'nanoid';
 import s from './Filter.module.css';
 
-const Filter = ({ filter, onFilter }) => {
+export default function Filter ({ filter, onFilter }) {
   const inputFilter = nanoid();
 
   return (
@@ -20,6 +20,4 @@ const Filter = ({ filter, onFilter }) => {
       </label>
     </>
   );
-};
-
-export default Filter;
+}
