@@ -48,26 +48,14 @@ export default function App () {
   //   }
   // }
 
-  const formSubmitHandler = (data) => {
-    let contactName = false;
-    const cont = [{
-      id: nanoid(),
-      name: data.name,
-      number: data.number,
-    }];
+  const formSubmitHandler = ({ name, number }) => {
+    const contactsNames = contacts.map(contact => {
+      return contact.name.toLowerCase();
+    });
 
-    for (const contact of contacts) {
-      if (data.name.toLowerCase() === contact.name.toLowerCase()) {
-        contactName = true;
-      }
-    }
-
-    if (!contactName) {
-      setContacts([...contacts, ...cont]);
-
-    } else {
-      alert(`${data.name} is already in contacts`);
-    }
+    contactsNames.includes(name.toLowerCase())
+      ? alert(`${name} is already in contacts `)
+      : setContacts([{ id: nanoid(), name, number }, ...contacts]);
   };
 
   const contactFilterHandler = (e) => {

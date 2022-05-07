@@ -1,6 +1,7 @@
 import React from 'react';
 import ContactItem from '../ContactItem';
 import s from './ContactList.module.css';
+import PropTypes from 'prop-types';
 
 export default function ContactList ({ contacts, onDelete }) {
   return (
@@ -19,3 +20,8 @@ export default function ContactList ({ contacts, onDelete }) {
     </ul>
   );
 }
+
+ContactItem.propTypes = {
+  onDelete: PropTypes.func.isRequired,
+  contacts: PropTypes.object,
+};
